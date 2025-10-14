@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function ReactTutorialBasic() {
+  const topics = [
+    "What is React?",
+    "Setting up the Environment",
+    "JSX Introduction",
+    "Components in React",
+    "Props and State",
+    "Handling Events",
+    "Conditional Rendering",
+    "Lists and Keys",
+    "React Hooks (useState, useEffect)",
+    "React Router Basics"
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gray-50 text-gray-900 p-8">
+      <header className="text-center mb-8">
+        <h1 className="text-4xl font-extrabold mb-2">React Tutorial</h1>
+        <p className="text-gray-600">Learn the basics of React step by step</p>
+      </header>
 
-export default App
+      <main className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md p-6">
+        <h2 className="text-2xl font-semibold mb-4">Topics Covered</h2>
+        <ul className="list-decimal pl-6 space-y-2 text-lg text-gray-700">
+          {topics.map((topic, index) => (
+            <li key={index}>{topic}</li>
+          ))}
+        </ul>
+      </main>
+    </div>
+  );
+}
